@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Reveal_Test
-  m_Shader: {fileID: -6465566751694194690, guid: cd24bd32bde5e4eada0a62e64ad2bd19,
+  m_Name: Shader Graphs_DitherLit
+  m_Shader: {fileID: -6465566751694194690, guid: defbfeea2463b47e98930fdaced51efb,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -28,10 +28,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - Texture2D_5ECA7452:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - Texture2D_8DDFDE5D:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -41,12 +37,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_759D2D52: 0.1
-    - Vector1_B96C5FA0: 0.03
-    - Vector1_B9F6CF29: 5.2
+    - Vector1_1C03A6A9: 12.2
+    - Vector1_759D2D52: 0.77
+    - Vector1_B96C5FA0: 0.2
+    - Vector1_B9F6CF29: 17.25
     m_Colors:
-    - Color_318EA7BD: {r: 0.5188679, g: 0.5066305, b: 0.5066305, a: 0}
-    - Color_47CB6A72: {r: 0, g: 0, b: 0, a: 0}
-    - Color_4B476622: {r: 0, g: 0, b: 0, a: 0}
-    - Color_86771EC6: {r: 0, g: 0, b: 0, a: 0}
+    - Color_FC264E77: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0}
     - Vector3_4BB93551: {r: 1, g: 1, b: 1, a: 1}
