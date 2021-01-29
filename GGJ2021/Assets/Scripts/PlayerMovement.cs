@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
                     hit.transform.GetComponent<Rigidbody>().isKinematic = true;
                     _heldObj = hit.transform.GetComponent<Moveable>();
                     Vector3 position = _grabTarget.transform.localPosition;
+                    if (!_heldObj.Heavy)
                     StartCoroutine(_heldObj.MoveToPos(position));
                 }
             }
