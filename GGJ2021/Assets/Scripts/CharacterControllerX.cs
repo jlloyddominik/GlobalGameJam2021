@@ -16,15 +16,16 @@ public class CharacterControllerX : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 		cCollider = GetComponent<CapsuleCollider>();
-
+		center = cCollider.center;
 		radius = cCollider.radius;
 	}
 
     // Update is called once per frame
     void Update()
     {
-        center = transform.position;
-    }
+		//center = transform.position;
+		//center = cCollider.center;
+	}
 
 	public void Move(Vector3 direction)
 	{
@@ -38,7 +39,7 @@ public class CharacterControllerX : MonoBehaviour
 	}
 
 	private Rigidbody floorOn;
-	private void OnCollisionEnter(Collision collision)
+	private void OnCollisionStay(Collision collision)
 	{
 		if (collision.GetContact(0).point.y <= transform.position.y - 0.4) {
 			isGrounded = true;

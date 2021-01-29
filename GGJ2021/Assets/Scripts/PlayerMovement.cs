@@ -11,10 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public InputAction GrabInput;
 
     [Header("Movement Variables")]
-    [SerializeField] private float _playerSpeed = 5, _turnRate = 5;
+    [SerializeField] private float _playerSpeed = 5;
     private Vector3 _playerVelocity;
     private float _gravityValue = -9.81f;
-    private bool _lockRot = false;
     [SerializeField] private float _jumpHeight = 5;
 
     [Header("Object References")]
@@ -45,14 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
-
-        if (_playerInput != Vector3.zero && (!_lockRot))
-        {
-			Vector3 _rotationDir = _movementDir;
-			_rotationDir[1] = 0;
-			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
-			cc.Rotate(Quaternion.Slerp(transform.rotation, a, _turnRate * Time.deltaTime * 2.0f));
-        }
     }
 
     void Jump()
@@ -68,19 +59,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_heldObj == null)
         {
+            
             if (Physics.SphereCast(transform.position + cc.center, cc.radius, transform.forward, out RaycastHit hit, 1f))
             {
+                Debug.Log("Here!");
                 if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>())
-                { 
+                {
+                    
                     hit.transform.parent = transform;
                     hit.transform.GetComponent<Rigidbody>().isKinematic = true;
                     _heldObj = hit.transform.GetComponent<Moveable>();
-                    if (_heldObj.Heavy) _lockRot = true;
-                    else
-                    {
-                        Vector3 position = _grabTarget.transform.position;
-                        StartCoroutine(_heldObj.MoveToPos(position));
-                    }
+                    Vector3 position = _grabTarget.transform.localPosition;
+                    StartCoroutine(_heldObj.MoveToPos(position));
                 }
             }
         }
@@ -88,7 +78,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _heldObj.transform.parent = null;
             _heldObj.GetComponent<Rigidbody>().isKinematic = false;
-            _lockRot = false;
             _heldObj = null;
         }
     }

@@ -8,9 +8,9 @@ public class Moveable : MonoBehaviour
 
     public IEnumerator MoveToPos(Vector3 _destination)
     {
-        while (transform.position != _destination)
+        while (transform.localPosition != _destination)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _destination, Time.deltaTime*10);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, _destination, Time.deltaTime*10);
             yield return null;
         }
     }
