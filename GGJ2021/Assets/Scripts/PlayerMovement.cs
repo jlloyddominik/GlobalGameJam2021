@@ -35,15 +35,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cc.isGrounded && _playerVelocity.y < 0)
+		_playerVelocity.y += _gravityValue * Time.deltaTime;
+		if (cc.isGrounded && _playerVelocity.y < 0)
             _playerVelocity.y = 0f;
 
         Vector3 _playerInput = new Vector3(MovementInput.ReadValue<Vector2>().x ,0, MovementInput.ReadValue<Vector2>().y);
         Vector3 _movementDir = new Vector3(_playerInput.x, 0, _playerInput.z) * _playerSpeed;
-        _playerVelocity.y += _gravityValue * Time.deltaTime;
 
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
+<<<<<<< HEAD
+=======
+
+        if (_playerInput != Vector3.zero && (!_lockRot))
+        {
+			Vector3 _rotationDir = _movementDir;
+			_rotationDir[1] = 0;
+			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
+			cc.Rotate(a);
+        }
+>>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
     }
 
     void Jump()

@@ -10,47 +10,81 @@ public class CharacterControllerX : MonoBehaviour
 
 	private Rigidbody rb;
 	private CapsuleCollider cCollider;
+	private float _turnRate = 5;
+	private ColliderScript colliderS;
+
+	public Transform model;
 
 	// Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 		cCollider = GetComponent<CapsuleCollider>();
+<<<<<<< HEAD
 		center = cCollider.center;
+=======
+		colliderS = GetComponent<ColliderScript>();
+
+>>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
 		radius = cCollider.radius;
 	}
 
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 		//center = transform.position;
 		//center = cCollider.center;
+=======
+        center = transform.position;
+>>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
 	}
 
+	private bool wasGroundMerged = false;
 	public void Move(Vector3 direction)
 	{
+		if (colliderS.groundmerged) {
+			isGrounded = true;
+			if (colliderS.lightCheckers[0].revealed) {
+				direction.z = Mathf.Min(direction.z, 0);
+			}
+			if (colliderS.lightCheckers[1].revealed)
+			{
+				direction.x = Mathf.Max(direction.x, 0);
+			}
+			if (colliderS.lightCheckers[2].revealed){
+				direction.z = Mathf.Max(direction.z, 0);
+			}
+			if (colliderS.lightCheckers[3].revealed)
+			{
+				direction.x = Mathf.Min(direction.x, 0);
+			}
+			wasGroundMerged = true;
+		} else if (wasGroundMerged) {
+			isGrounded = false;
+		}
 		rb.position += direction;
 		//rb.MovePosition(transform.position + direction);
 	}
 
-	public void Rotate(Quaternion rotate)
+	public void Rotate(Quaternion targetAngle)
 	{
-		rb.MoveRotation(rotate);
+		model.rotation = Quaternion.Slerp(model.rotation, targetAngle, _turnRate * Time.deltaTime * 2.0f);
 	}
+<<<<<<< HEAD
 
 	private Rigidbody floorOn;
+=======
+>>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
 	private void OnCollisionStay(Collision collision)
 	{
 		if (collision.GetContact(0).point.y <= transform.position.y - 0.4) {
 			isGrounded = true;
-			floorOn = collision.rigidbody;
 		}
 	}
 
 	private void OnCollisionExit(Collision collision)
 	{
-		if (collision.rigidbody == floorOn) {
-			isGrounded = false;
-		}
+		isGrounded = false;
 	}
 }
