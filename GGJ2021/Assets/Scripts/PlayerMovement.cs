@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Object References")]
     [SerializeField] private GameObject _grabTarget;
     private Moveable _heldObj;
+    private bool _lockRot = false;
     private CharacterControllerX cc;
     // Start is called before the first frame update
     void Start()
@@ -44,8 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
-<<<<<<< HEAD
-=======
 
         if (_playerInput != Vector3.zero && (!_lockRot))
         {
@@ -54,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
 			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
 			cc.Rotate(a);
         }
->>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
     }
 
     void Jump()

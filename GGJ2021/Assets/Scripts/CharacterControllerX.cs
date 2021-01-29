@@ -20,24 +20,16 @@ public class CharacterControllerX : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 		cCollider = GetComponent<CapsuleCollider>();
-<<<<<<< HEAD
 		center = cCollider.center;
-=======
 		colliderS = GetComponent<ColliderScript>();
-
->>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
 		radius = cCollider.radius;
 	}
 
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
 		//center = transform.position;
 		//center = cCollider.center;
-=======
-        center = transform.position;
->>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
 	}
 
 	private bool wasGroundMerged = false;
@@ -71,11 +63,8 @@ public class CharacterControllerX : MonoBehaviour
 	{
 		model.rotation = Quaternion.Slerp(model.rotation, targetAngle, _turnRate * Time.deltaTime * 2.0f);
 	}
-<<<<<<< HEAD
-
 	private Rigidbody floorOn;
-=======
->>>>>>> bea40e7340e7b84013e31946a4c7b6d6273a979e
+
 	private void OnCollisionStay(Collision collision)
 	{
 		if (collision.GetContact(0).point.y <= transform.position.y - 0.4) {
