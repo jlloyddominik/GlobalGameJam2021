@@ -20,11 +20,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Object References")]
     [SerializeField] private GameObject _grabTarget;
     private Moveable _heldObj;
-    private CharacterController cc;
+    private CharacterControllerX cc;
     // Start is called before the first frame update
     void Start()
     {
-        cc = GetComponent<CharacterController>();
+        cc = GetComponent<CharacterControllerX>();
         MovementInput.Enable();
         JumpInput.Enable();
         JumpInput.performed += _ => Jump();
@@ -48,8 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (_playerInput != Vector3.zero && (!_lockRot))
         {
-            Quaternion a = Quaternion.LookRotation(_movementDir, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, a, _turnRate * Time.deltaTime * 2.0f);
+			Vector3 _rotationDir = _movementDir;
+			_rotationDir[1] = 0;
+			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
+			cc.Rotate(Quaternion.Slerp(transform.rotation, a, _turnRate * Time.deltaTime * 2.0f));
         }
     }
 

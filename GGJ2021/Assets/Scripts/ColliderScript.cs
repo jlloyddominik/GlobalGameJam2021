@@ -17,10 +17,11 @@ public class ColliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		bool revealed = true;
+		bool revealed = false;
         foreach (LightCheckerScript checkerScript in lightCheckers) {
-			if (!checkerScript.revealed) {
-				revealed = false;
+			if (checkerScript.revealed) {
+				revealed = true;
+				break;
 			}
 		}
 
