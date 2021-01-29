@@ -121,6 +121,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &160378567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7899971
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060770, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533517846009060793, guid: 9dd484b5e1bfdda458a56ee49de87746,
+        type: 3}
+      propertyPath: m_Name
+      value: HiddenCollider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9dd484b5e1bfdda458a56ee49de87746, type: 3}
 --- !u!1 &286369881
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &590669318
 GameObject:
@@ -419,7 +488,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293500009
 GameObject:
@@ -512,7 +581,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1897801120
 PrefabInstance:
@@ -521,6 +590,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5502821287815127952, guid: 415c3cd7c957473428ae38b2590c144a,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
         type: 3}
       propertyPath: m_Name
@@ -674,7 +748,7 @@ Transform:
   m_Children:
   - {fileID: 2030001150}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &2030001149
 GameObject:

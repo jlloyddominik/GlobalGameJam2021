@@ -10,12 +10,17 @@ public class CharacterControllerX : MonoBehaviour
 
 	private Rigidbody rb;
 	private CapsuleCollider cCollider;
+	private float _turnRate = 5;
+	private ColliderScript colliderS;
+
+	public Transform model;
 
 	// Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 		cCollider = GetComponent<CapsuleCollider>();
+		colliderS = GetComponent<ColliderScript>();
 
 		radius = cCollider.radius;
 	}
@@ -24,32 +29,48 @@ public class CharacterControllerX : MonoBehaviour
     void Update()
     {
         center = transform.position;
-    }
+	}
 
+	private bool wasGroundMerged = false;
 	public void Move(Vector3 direction)
 	{
+		if (colliderS.groundmerged) {
+			isGrounded = true;
+			if (colliderS.lightCheckers[0].revealed) {
+				direction.z = Mathf.Min(direction.z, 0);
+			}
+			if (colliderS.lightCheckers[1].revealed)
+			{
+				direction.x = Mathf.Max(direction.x, 0);
+			}
+			if (colliderS.lightCheckers[2].revealed){
+				direction.z = Mathf.Max(direction.z, 0);
+			}
+			if (colliderS.lightCheckers[3].revealed)
+			{
+				direction.x = Mathf.Min(direction.x, 0);
+			}
+			wasGroundMerged = true;
+		} else if (wasGroundMerged) {
+			isGrounded = false;
+		}
 		rb.position += direction;
 		//rb.MovePosition(transform.position + direction);
 	}
 
-	public void Rotate(Quaternion rotate)
+	public void Rotate(Quaternion targetAngle)
 	{
-		rb.MoveRotation(rotate);
+		model.rotation = Quaternion.Slerp(model.rotation, targetAngle, _turnRate * Time.deltaTime * 2.0f);
 	}
-
-	private Rigidbody floorOn;
-	private void OnCollisionEnter(Collision collision)
+	private void OnCollisionStay(Collision collision)
 	{
 		if (collision.GetContact(0).point.y <= transform.position.y - 0.4) {
 			isGrounded = true;
-			floorOn = collision.rigidbody;
 		}
 	}
 
 	private void OnCollisionExit(Collision collision)
 	{
-		if (collision.rigidbody == floorOn) {
-			isGrounded = false;
-		}
+		isGrounded = false;
 	}
 }

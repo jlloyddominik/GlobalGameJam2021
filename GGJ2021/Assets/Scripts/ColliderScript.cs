@@ -8,6 +8,8 @@ public class ColliderScript : MonoBehaviour
 	private ContactTracker contacts;
 	public LightCheckerScript[] lightCheckers;
 
+	public bool groundmerged = false;
+
 	// Start is called before the first frame update
     void Start()
     {
@@ -25,9 +27,12 @@ public class ColliderScript : MonoBehaviour
 			}
 		}
 
+		groundmerged = false;
 		if (revealed) {
 			if (contacts.numberOfContacts == 0) {
 				fakeCollider.isTrigger = false;
+			} else {
+				groundmerged = true;
 			}
 		} else {
 			fakeCollider.isTrigger = true;

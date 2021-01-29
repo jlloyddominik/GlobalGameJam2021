@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public InputAction GrabInput;
 
     [Header("Movement Variables")]
-    [SerializeField] private float _playerSpeed = 5, _turnRate = 5;
+    [SerializeField] private float _playerSpeed = 5;
     private Vector3 _playerVelocity;
     private float _gravityValue = -9.81f;
     private bool _lockRot = false;
@@ -36,12 +36,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cc.isGrounded && _playerVelocity.y < 0)
+		_playerVelocity.y += _gravityValue * Time.deltaTime;
+		if (cc.isGrounded && _playerVelocity.y < 0)
             _playerVelocity.y = 0f;
 
         Vector3 _playerInput = new Vector3(MovementInput.ReadValue<Vector2>().x ,0, MovementInput.ReadValue<Vector2>().y);
         Vector3 _movementDir = new Vector3(_playerInput.x, 0, _playerInput.z) * _playerSpeed;
-        _playerVelocity.y += _gravityValue * Time.deltaTime;
 
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 			Vector3 _rotationDir = _movementDir;
 			_rotationDir[1] = 0;
 			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
-			cc.Rotate(Quaternion.Slerp(transform.rotation, a, _turnRate * Time.deltaTime * 2.0f));
+			cc.Rotate(a);
         }
     }
 
