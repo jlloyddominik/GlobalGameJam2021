@@ -137,7 +137,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5682594
+        functionName: JumpSFX
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -195,7 +203,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: JumpSFX
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -224,7 +240,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5418089
+        functionName: FootSteps
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.014505119
+        functionName: FootSteps
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -253,7 +285,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.4839565
+        functionName: FootSteps
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.024107143
+        functionName: FootSteps
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -282,7 +330,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.5085324
+        functionName: FootSteps
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.087030716
+        functionName: FootSteps
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

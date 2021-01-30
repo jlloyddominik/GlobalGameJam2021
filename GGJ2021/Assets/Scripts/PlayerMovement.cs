@@ -22,18 +22,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject _grabTarget;
     [SerializeField] private Light _flashlight;
     private Moveable _heldObj;
-
+    [SerializeField] private List<AudioClip> FootstepsWalk = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> FootstepsRun = new List<AudioClip>();
     private bool _lockRot => LockRotation.ReadValue<float>() >0;
     private bool _freezeMovements => (this.animator.GetCurrentAnimatorStateInfo(0).IsName("PickUp"));
     public Moveable HeldObj { get => _heldObj; set => _heldObj = value; }
 
     private Rigidbody _heldRB;
     private CharacterControllerX cc;
+    private AudioSource _audioPlayer;
     // Start is called before the first frame update
     void Start()
     {
         cc = GetComponent<CharacterControllerX>();
         animator = GetComponent<Animator>();
+        _audioPlayer = GetComponent<AudioSource>();
         MovementInput.Enable();
         JumpInput.Enable();
         JumpInput.performed += _ => Jump();
@@ -53,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_freezeMovements);
+        //Debug.Log(_freezeMovements);
         float _lockBtn = LockRotation.ReadValue<float>();
         _playerVelocity.y += _gravityValue * Time.deltaTime;
 		if (cc.isGrounded && _playerVelocity.y < 0)
@@ -85,6 +88,19 @@ public class PlayerMovement : MonoBehaviour
 			_heldObj.rotate(cc.model.rotation);
 		}
 	}
+    public void FootSteps()
+    {
+        //Footsteps
+        Debug.Log("PlaySoundR");
+        int _randomSound = Random.Range(0, FootstepsWalk.Count - 1);
+        _audioPlayer.PlayOneShot(FootstepsWalk[_randomSound]);
+    }
+
+    public void JumpSFX()
+    {
+
+    }
+
     void Animation(Vector3 _playerInput)
     {
         animator.SetBool("isGrounded", cc.isGrounded);
