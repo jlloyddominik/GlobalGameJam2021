@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Object References")]
     [SerializeField] private GameObject _grabTarget;
+    [SerializeField] private Light _flashlight;
     private Moveable _heldObj;
     private bool _lockRot = false;
     private CharacterControllerX cc;
@@ -31,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
 
         GrabInput.Enable();
         GrabInput.performed += _ => Grab();
+
+        LightInput.Enable();
+        LightInput.performed += _ => FlashLightToggle();
     }
 
     // Update is called once per frame
@@ -46,13 +50,13 @@ public class PlayerMovement : MonoBehaviour
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
 
-        if (_playerInput != Vector3.zero && (!_lockRot))
-        {
-			Vector3 _rotationDir = _movementDir;
-			_rotationDir[1] = 0;
-			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
-			cc.Rotate(a);
-        }
+        //if (_playerInput != Vector3.zero && (!_lockRot))
+        //{
+			//Vector3 _rotationDir = _movementDir;
+			//_rotationDir[1] = 0;
+			//Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
+			//cc.Rotate(a);
+        //}
     }
 
     void Jump()
@@ -94,6 +98,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FlashLightToggle()
     {
-
+        _flashlight.gameObject.SetActive(!_flashlight.gameObject.activeSelf);
     }
 }
