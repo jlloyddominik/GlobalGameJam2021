@@ -36,7 +36,7 @@ public class ColliderScript : MonoBehaviour
 
 		groundmerged = false;
 		if (revealed) {
-			if (nRevealed >= 3 || contacts.numberOfContacts == 0) {
+			if (nRevealed >= lightCheckers.Length - 1 || contacts.numberOfContacts == 0) {
 				fakeCollider.isTrigger = false;
 			} else {
 				groundmerged = true;
