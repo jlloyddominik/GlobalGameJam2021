@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float _lockBtn = LockRotation.ReadValue<float>();
-        //Debug.Log();
+        Debug.Log(_lockBtn);
         _playerVelocity.y += _gravityValue * Time.deltaTime;
 		if (cc.isGrounded && _playerVelocity.y < 0)
             _playerVelocity.y = 0f;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
 
-        if (_playerInput != Vector3.zero && (!_lockRot )&& (_lockBtn >0))
+        if (_playerInput != Vector3.zero && ((!_lockRot ) || (_lockBtn <1)))
         {
             Vector3 _rotationDir = _movementDir;
             _rotationDir[1] = 0;
