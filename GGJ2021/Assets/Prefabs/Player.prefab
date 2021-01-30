@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706857864}
   - component: {fileID: 1706857865}
+  - component: {fileID: 1461681748}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -43,10 +44,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 25
   m_Range: 1991.61
-  m_SpotAngle: 36.012764
-  m_InnerSpotAngle: 27.814844
+  m_SpotAngle: 46.83574
+  m_InnerSpotAngle: 38.637817
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -92,6 +93,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1461681748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706857863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UsePipelineSettings: 1
 --- !u!1 &1717045308
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +560,30 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Movement Input
       m_Flags: 8
+  LockRotation:
+    m_Name: Lock Rotation
+    m_Type: 0
+    m_ExpectedControlType: Button
+    m_Id: 8c58813b-b945-4bc3-996a-d171f980fc4e
+    m_Processors: 
+    m_Interactions: Hold
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 060e52d0-9833-4ade-8702-9f51f7d8fcb4
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Lock Rotation
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 20c5564c-db0c-42d4-a7e2-4ae03ce17eb6
+      m_Path: <Gamepad>/rightShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Lock Rotation
+      m_Flags: 0
   JumpInput:
     m_Name: Jump Input
     m_Type: 0
@@ -621,6 +659,7 @@ MonoBehaviour:
   _playerSpeed: 4
   _jumpHeight: 3
   _grabTarget: {fileID: 2494590640495700204}
+  _model: {fileID: 8989225526924732937}
   _flashlight: {fileID: 1706857865}
 --- !u!114 &6226899688669877666
 MonoBehaviour:
