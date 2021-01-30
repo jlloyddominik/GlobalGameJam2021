@@ -28,7 +28,7 @@ public class LightCheckerScript : MonoBehaviour
 	void OnTriggerEnter(Collider collider)
 	{
 		LightCollisionScript collisionScript = collider.GetComponent<LightCollisionScript>();
-		if (collisionScript.isInside(transform.position) && !lightIDsEntered.Contains(collisionScript.GetInstanceID())) {
+		if (collisionScript.shining && collisionScript.isInside(transform.position) && !lightIDsEntered.Contains(collisionScript.GetInstanceID())) {
 			nLightSources = nLightSources + 1;
 			lightIDsEntered.Add(collisionScript.GetInstanceID());
 		}
@@ -37,7 +37,7 @@ public class LightCheckerScript : MonoBehaviour
 	private void OnTriggerStay(Collider collider)
 	{
 		LightCollisionScript collisionScript = collider.GetComponent<LightCollisionScript>();
-		if (collisionScript.isInside(transform.position))
+		if (collisionScript.shining && collisionScript.isInside(transform.position))
 		{
 			if (!lightIDsEntered.Contains(collisionScript.GetInstanceID())) {
 				nLightSources = nLightSources + 1;
