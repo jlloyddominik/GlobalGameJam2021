@@ -14,7 +14,7 @@ void RevealSingle_float(float3 Position, int index, out float1 Value, out float3
 #endif
     Value = value;
     Colour = colour;
-    InLight = inLight > 0 ? 1 : 0;
+    InLight = inLight > 0.01 ? 1 : 0;
 
 }
 
@@ -35,7 +35,7 @@ void RevealLight_float(float3 Position, out float1 Value, out float3 Colour, out
 #endif
     Value = value;
     Colour = colour;
-    InLight = inLight > 0 ? 1 : 0;
+    InLight = inLight > 0.01 ? 1 : 0;
 
 }
 
