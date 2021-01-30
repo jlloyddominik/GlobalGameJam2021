@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
 		yOffset = transform.position.y - trackingTarget.position.y;
 	}
 
-	void Update()
+	void FixedUpdate()
     {
 		float newX = Mathf.Min(Mathf.Max(trackingTarget.position.x, xBounds[0]), xBounds[1]);
 		float newY = Mathf.Min(Mathf.Max(trackingTarget.position.y, yBounds[0]), yBounds[1]) + yOffset;
