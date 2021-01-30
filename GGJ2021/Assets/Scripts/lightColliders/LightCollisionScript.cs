@@ -18,10 +18,9 @@ public abstract class LightCollisionScript : MonoBehaviour
 	}
 
 	protected bool checkInShadow(Vector3 point) {
-		//Vector3 lightOrigin = transform.position;
-		//int layerMask = 257;
-		//bool inShadow = Physics.Raycast(point, lightOrigin - point, (point - lightOrigin).magnitude, layerMask);
-		//return inShadow;
-		return false;
+		Vector3 lightOrigin = transform.position;
+		int layerMask = 257;
+		bool inShadow = Physics.Raycast(point, lightOrigin - point, (point - lightOrigin).magnitude, layerMask);
+		return inShadow;
 	}
 }

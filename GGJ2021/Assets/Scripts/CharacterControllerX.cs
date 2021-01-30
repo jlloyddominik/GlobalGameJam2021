@@ -9,7 +9,7 @@ public class CharacterControllerX : MonoBehaviour
 	public float radius;
 
 	private Rigidbody rb;
-	private BoxCollider cCollider;
+	private CapsuleCollider cCollider;
 	private float _turnRate = 5;
 	private ColliderScript colliderS;
 
@@ -19,10 +19,10 @@ public class CharacterControllerX : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-		cCollider = GetComponent<BoxCollider>();
+		cCollider = GetComponent<CapsuleCollider>();
 		center = cCollider.center;
 		colliderS = GetComponent<ColliderScript>();
-		//radius = cCollider.radius;
+		radius = cCollider.radius;
 	}
 
     // Update is called once per frame
@@ -32,12 +32,11 @@ public class CharacterControllerX : MonoBehaviour
 		//center = cCollider.center;
 	}
 
-	public float timeSinceLastGround = 0f;
 	private bool wasGroundMerged = false;
 	public void Move(Vector3 direction)
 	{
 		if (colliderS.groundmerged) {
-			isGrounded = colliderS.standingOnDarkness;
+			isGrounded = true;
 			if (colliderS.lightCheckers[0].revealed) {
 				direction.z = Mathf.Min(direction.z, 0);
 			}
@@ -58,12 +57,6 @@ public class CharacterControllerX : MonoBehaviour
 		}
 		rb.position += direction;
 		//rb.MovePosition(transform.position + direction);
-
-		if (isGrounded) {
-			timeSinceLastGround = 0;
-		} else {
-			timeSinceLastGround = timeSinceLastGround + Time.deltaTime;
-		}
 	}
 
 	public void Rotate(Quaternion targetAngle)
@@ -72,19 +65,9 @@ public class CharacterControllerX : MonoBehaviour
 	}
 	private Rigidbody floorOn;
 
-	private float footOffset = 0.8f;
 	private void OnCollisionStay(Collision collision)
 	{
-		bool appropriate = true;
-		for (int i = 0; i<collision.contactCount; i++) {
-			if (collision.GetContact(i).point.y > transform.position.y - footOffset)
-			{
-				appropriate = false;
-				break;
-			}
-		}
-
-		if (appropriate) {
+		if (collision.GetContact(0).point.y <= transform.position.y - 0.4) {
 			isGrounded = true;
 		}
 	}

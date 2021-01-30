@@ -23,9 +23,6 @@ public class PlayerMovement : MonoBehaviour
     private Moveable _heldObj;
 
     private bool _lockRot => LockRotation.ReadValue<float>() >0;
-
-    public Moveable HeldObj { get => _heldObj; set => _heldObj = value; }
-
     private Rigidbody _heldRB;
     private CharacterControllerX cc;
     // Start is called before the first frame update
@@ -72,20 +69,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
 		if (_heldObj != null) {
-            //StartCoroutine(_heldObj.MoveToPos(_grabTarget.transform.position));
-            _heldObj.AndrewsMoveToPos(_grabTarget.transform.position);
+			//StartCoroutine(_heldObj.MoveToPos(_grabTarget.transform.position));
+			_heldObj.AndrewsMoveToPos(_grabTarget.transform.position);
 		}
 	}
 
-	private float coyoteTime = 0.05f;
     void Jump()
     {
-		print(cc.isGrounded);
-        if (cc.isGrounded || cc.timeSinceLastGround <= coyoteTime)// || (_heldObj != null && !_heldObj.Heavy))
+        if (cc.isGrounded || (_heldObj != null && !_heldObj.Heavy))
         {
             _playerVelocity.y += Mathf.Sqrt(-_jumpHeight * _gravityValue);
-			cc.timeSinceLastGround = 2* coyoteTime;
-		}
+
+        }
     }
 
     void Grab()
@@ -95,14 +90,21 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.SphereCast(transform.position + cc.center, 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
                 var interactable = hit.transform.GetComponent<IInteractable>();
-                if (interactable == null) return;
-                interactable.Interact(this);
+                if (hit.transform.gameObject== null) return;
+                interactable.Interact();
+
+                Debug.Log("Here!");
+                if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>())
+                {
+					_heldObj = hit.transform.GetComponent<Moveable>();
+					_heldObj.grab();
+				}
             }
         }
         else
         {
-            _heldObj.drop();
-            _heldObj = null;
+			_heldObj.drop();
+			_heldObj = null;
         }
     }
 
