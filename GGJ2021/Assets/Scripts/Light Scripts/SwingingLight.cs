@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwingingLight : MonoBehaviour, IInteractable
+public class SwingingLight : MonoBehaviour
 {
     //https://www.youtube.com/watch?v=9RtR7Uf4HIQ
     [Range(-1,1)]
@@ -37,15 +37,5 @@ public class SwingingLight : MonoBehaviour, IInteractable
                 transform.Rotate(DirX * (_speed * _timer), 0, DirZ * (_speed * _timer));
                 break;
         }
-    }
-
-    public void Switch()
-    {
-        Lightbulb.SetActive(!Lightbulb.activeSelf);
-    }
-
-    public void Interact(PlayerMovement PlayerRef)
-    {
-        Switch();
     }
 }
