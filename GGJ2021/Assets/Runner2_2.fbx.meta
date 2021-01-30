@@ -18,6 +18,15 @@ ModelImporter:
   - first:
       74: -4799524434163024911
     second: Armature|walk
+  - first:
+      74: -2279473684214877460
+    second: Armature|jumpEnd
+  - first:
+      74: 5792747406112825698
+    second: Armature|jumpMid
+  - first:
+      74: 6566261972556028450
+    second: Armature|walkCarry
   externalObjects: {}
   materials:
     materialImportMode: 1
