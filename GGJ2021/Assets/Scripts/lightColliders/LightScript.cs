@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightScript : IInteractable, MonoBehaviour
+public class LightScript : MonoBehaviour, IInteractable
 {
-    
+	public void Interact(PlayerMovement PlayerRef)
+	{
+	}
 }
