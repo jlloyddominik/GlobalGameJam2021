@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/Simple Jumping.unity
+    guid: 5f2ad88f75c84c04a80394cfd2859dbe
+  - enabled: 1
+    path: Assets/Scenes/Levels/Light Introduction.unity
+    guid: e77fa147fe334924d934d199729cbfeb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Directional lights.unity
+    guid: 2f06492bdef8cb34dbcbfb2f14cf7802
   m_configObjects: {}

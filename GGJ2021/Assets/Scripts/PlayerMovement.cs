@@ -48,8 +48,17 @@ public class PlayerMovement : MonoBehaviour
         //LockRotation.canceled += _ => _lockRot = false;
     }
 
-    // Update is called once per frame
-    void Update()
+	private void OnDestroy()
+	{
+		MovementInput.Disable();
+		JumpInput.Disable();
+		GrabInput.Disable();
+		LightInput.Disable();
+		LockRotation.Disable();
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         float _lockBtn = LockRotation.ReadValue<float>();
         //Debug.Log(_lockBtn);
