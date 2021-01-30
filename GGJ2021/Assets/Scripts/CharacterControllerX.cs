@@ -55,6 +55,7 @@ public class CharacterControllerX : MonoBehaviour
 			wasGroundMerged = true;
 		} else if (wasGroundMerged) {
 			isGrounded = false;
+			wasGroundMerged = false;
 		}
 		rb.position += direction;
 		//rb.MovePosition(transform.position + direction);

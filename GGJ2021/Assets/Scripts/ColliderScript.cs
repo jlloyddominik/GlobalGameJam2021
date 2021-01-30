@@ -6,6 +6,7 @@ public class ColliderScript : MonoBehaviour
 {
 	public Collider fakeCollider;
 	private ContactTracker contacts;
+	public CollisionTracker realContacts;
 	public LightCheckerScript[] lightCheckers;
 
 	public bool groundmerged = false;
@@ -38,7 +39,7 @@ public class ColliderScript : MonoBehaviour
 		if (revealed) {
 			if (nRevealed >= lightCheckers.Length - 1 || contacts.numberOfContacts == 0) {
 				fakeCollider.isTrigger = false;
-			} else {
+			} else if (realContacts == null || realContacts.numberOfContacts == 0) {
 				groundmerged = true;
 			}
 		} else {
