@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 392e2da39fa89aa44b8b79a5ef28c04b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,12 +132,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fakeCollider: {fileID: 6889358592390833155}
+  realContacts: {fileID: 0}
   lightCheckers:
   - {fileID: 6889358590647324764}
   - {fileID: 4413959594335446441}
   - {fileID: 4413959593867182873}
   - {fileID: 4413959594277936235}
   groundmerged: 0
+  standingOnDarkness: 0
+  revealed: 0
 --- !u!114 &7967563599104789034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heavy: 0
+  visible: 1
+  hideInDarkness: 0
+  rotatable: 0
 --- !u!114 &8574023970191801724
 MonoBehaviour:
   m_ObjectHideFlags: 0
