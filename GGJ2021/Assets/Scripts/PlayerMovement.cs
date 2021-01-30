@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Inputs")]
     public InputAction MovementInput;
+    public InputAction LockRotation;
     public InputAction JumpInput;
     public InputAction LightInput;
     public InputAction GrabInput;
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject _grabTarget;
     [SerializeField] private Light _flashlight;
     private Moveable _heldObj;
-    private bool _lockRot = false;
+    private bool _lockRot => LockRotation.ReadValue<float>() >0;
     private CharacterControllerX cc;
     // Start is called before the first frame update
     void Start()
@@ -35,12 +36,19 @@ public class PlayerMovement : MonoBehaviour
 
         LightInput.Enable();
         LightInput.performed += _ => FlashLightToggle();
+
+        LockRotation.Enable();
+        //LockRotation.started += _ => _lockRot = true;
+        //LockRotation.performed += _ => _lockRot = false;
+        //LockRotation.canceled += _ => _lockRot = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-		_playerVelocity.y += _gravityValue * Time.deltaTime;
+        float _lockBtn = LockRotation.ReadValue<float>();
+        //Debug.Log();
+        _playerVelocity.y += _gravityValue * Time.deltaTime;
 		if (cc.isGrounded && _playerVelocity.y < 0)
             _playerVelocity.y = 0f;
 
@@ -50,13 +58,13 @@ public class PlayerMovement : MonoBehaviour
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
 
-        //if (_playerInput != Vector3.zero && (!_lockRot))
-        //{
-			//Vector3 _rotationDir = _movementDir;
-			//_rotationDir[1] = 0;
-			//Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
-			//cc.Rotate(a);
-        //}
+        if (_playerInput != Vector3.zero && (!_lockRot )&& (_lockBtn >0))
+        {
+            Vector3 _rotationDir = _movementDir;
+            _rotationDir[1] = 0;
+            Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
+            cc.Rotate(a);
+        }
     }
 
     void Jump()
