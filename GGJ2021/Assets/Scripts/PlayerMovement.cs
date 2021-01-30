@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 		if (_heldObj != null) {
             //StartCoroutine(_heldObj.MoveToPos(_grabTarget.transform.position));
             _heldObj.AndrewsMoveToPos(_grabTarget.transform.position);
+			_heldObj.rotate(cc.model.rotation);
 		}
 	}
 
