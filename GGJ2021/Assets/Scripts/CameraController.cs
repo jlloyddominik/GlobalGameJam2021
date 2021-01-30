@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public Transform trackingTarget;
 
-    // Update is called once per frame
-    void Update()
+	public Vector2 xBounds;
+	public Vector2 yBounds;
+
+	private float yOffset;
+	private void Start()
+	{
+		yOffset = transform.position.y - trackingTarget.position.y;
+	}
+
+	void Update()
     {
-        
+		float newX = Mathf.Min(Mathf.Max(trackingTarget.position.x, xBounds[0]), xBounds[1]);
+		float newY = Mathf.Min(Mathf.Max(trackingTarget.position.y, yBounds[0]), yBounds[1]) + yOffset;
+		transform.position = new Vector3(transform.position.x + 10*Time.deltaTime*(newX - transform.position.x), transform.position.y + 10*Time.deltaTime * (newY - transform.position.y), transform.position.z);
     }
 }

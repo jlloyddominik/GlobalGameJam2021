@@ -79,23 +79,14 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log("Here!");
                 if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>())
                 {
-                    
-                    hit.transform.parent = transform;
 					_heldObj = hit.transform.GetComponent<Moveable>();
-					_heldRB = _heldObj.GetComponent<Rigidbody>();
-					//hit.transform.GetComponent<Rigidbody>().isKinematic = true;
-					//_heldRB.constraints = RigidbodyConstraints.FreezeRotation;
-					Vector3 position = _grabTarget.transform.localPosition;
-                    //if (!_heldObj.Heavy)
-					//	StartCoroutine(_heldObj.MoveToPos(Vector3.zero));
-                }
+					_heldObj.grab();
+				}
             }
         }
         else
         {
-            _heldObj.transform.parent = null;
-			//_heldObj.GetComponent<Rigidbody>().isKinematic = false;
-			//_heldRB.constraints = RigidbodyConstraints.FreezeRotation;
+			_heldObj.drop();
 			_heldObj = null;
         }
     }
