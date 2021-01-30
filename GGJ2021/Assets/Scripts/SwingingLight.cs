@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwingingLight : MonoBehaviour
+public class SwingingLight : MonoBehaviour, IInteractable
 {
     //https://www.youtube.com/watch?v=9RtR7Uf4HIQ
     [Range(-1,1)]
@@ -12,6 +12,7 @@ public class SwingingLight : MonoBehaviour
     [SerializeField]private float _speed = 1f;
     int _phase = 0;
 
+    [SerializeField] private Light Lightbulb;
     private void FixedUpdate()
     {
         _timer += Time.fixedDeltaTime;
@@ -36,5 +37,15 @@ public class SwingingLight : MonoBehaviour
                 transform.Rotate(DirX * (_speed * _timer), 0, DirZ * (_speed * _timer));
                 break;
         }
+    }
+
+    public void Switch()
+    {
+        Lightbulb.gameObject.SetActive(!Lightbulb.gameObject.activeSelf);
+    }
+
+    public void Interact()
+    {
+        Switch();
     }
 }

@@ -89,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Physics.SphereCast(transform.position + cc.center, 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
+                var interactable = hit.transform.GetComponent<IInteractable>();
+                if (hit.transform.gameObject== null) return;
+                interactable.Interact();
+
                 Debug.Log("Here!");
                 if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>())
                 {
