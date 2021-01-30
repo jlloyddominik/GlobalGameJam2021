@@ -27,7 +27,16 @@ ModelImporter:
   - first:
       74: 6566261972556028450
     second: Armature|walkCarry
+<<<<<<< HEAD:GGJ2021/Assets/Runner2_2.fbx.meta
   externalObjects: {}
+=======
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 67edf52e0e0614918b665ef16f702ba0, type: 2}
+>>>>>>> 92679d678bec61fa955fcbd0d7ebe3fa5e8ff6d2:GGJ2021/Assets/Models/Runner2_2.fbx.meta
   materials:
     materialImportMode: 1
     materialName: 0

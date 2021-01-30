@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public InputAction GrabInput;
 
     [Header("Movement Variables")]
-    [SerializeField] private float _playerSpeed = 5;
+    [SerializeField] private float _playerSpeed = 8;
     private Vector3 _playerVelocity;
     private float _gravityValue = -9.81f;
     [SerializeField] private float _jumpHeight = 5;
