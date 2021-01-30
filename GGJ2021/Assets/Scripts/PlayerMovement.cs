@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private Moveable _heldObj;
 
     private bool _lockRot => LockRotation.ReadValue<float>() >0;
+
+    public Moveable HeldObj { get => _heldObj; set => _heldObj = value; }
+
     private Rigidbody _heldRB;
     private CharacterControllerX cc;
     // Start is called before the first frame update
@@ -69,8 +72,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
 		if (_heldObj != null) {
-			//StartCoroutine(_heldObj.MoveToPos(_grabTarget.transform.position));
-			_heldObj.AndrewsMoveToPos(_grabTarget.transform.position);
+            //StartCoroutine(_heldObj.MoveToPos(_grabTarget.transform.position));
+            _heldObj.AndrewsMoveToPos(_grabTarget.transform.position);
 		}
 	}
 
@@ -92,18 +95,15 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Physics.SphereCast(transform.position + cc.center, 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
-                Debug.Log("Here!");
-                if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>() && hit.transform.GetComponent<Moveable>().visible)
-                {
-					_heldObj = hit.transform.GetComponent<Moveable>();
-					_heldObj.grab();
-				}
+                var interactable = hit.transform.GetComponent<IInteractable>();
+                if (interactable == null) return;
+                interactable.Interact(this);
             }
         }
         else
         {
-			_heldObj.drop();
-			_heldObj = null;
+            _heldObj.drop();
+            _heldObj = null;
         }
     }
 
