@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_heldObj == null)
         {
-            if (Physics.SphereCast(transform.position + cc.center, 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
+            if (Physics.SphereCast(transform.position , 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
                 var interactable = hit.transform.GetComponent<IInteractable>();
                 if (interactable == null) return;
