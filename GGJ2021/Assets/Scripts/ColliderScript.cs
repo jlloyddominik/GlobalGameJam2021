@@ -20,16 +20,17 @@ public class ColliderScript : MonoBehaviour
     void Update()
     {
 		bool revealed = false;
+		int nRevealed = 0;
         foreach (LightCheckerScript checkerScript in lightCheckers) {
 			if (checkerScript.revealed) {
 				revealed = true;
-				break;
+				nRevealed += 1;
 			}
 		}
 
 		groundmerged = false;
 		if (revealed) {
-			if (contacts.numberOfContacts == 0) {
+			if (nRevealed >= 3 || contacts.numberOfContacts == 0) {
 				fakeCollider.isTrigger = false;
 			} else {
 				groundmerged = true;

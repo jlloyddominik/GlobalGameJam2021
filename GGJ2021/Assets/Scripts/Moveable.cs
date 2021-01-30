@@ -6,12 +6,24 @@ public class Moveable : MonoBehaviour
 {
     public bool Heavy = false;
 
-    public IEnumerator MoveToPos(Vector3 _destination)
+	Rigidbody rb;
+	private void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+	}
+
+	public IEnumerator MoveToPos(Vector3 _destination)
     {
-        while (transform.localPosition != _destination)
+        while (transform.position != _destination)
         {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, _destination, Time.deltaTime*10);
+            transform.position = Vector3.MoveTowards(transform.position, _destination, Time.deltaTime*10);
             yield return null;
         }
     }
+
+	public void AndrewsMoveToPos(Vector3 _destination)
+	{
+		rb.MovePosition(_destination);
+		rb.velocity = new Vector3.zero;
+	}
 }

@@ -19,7 +19,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Object References")]
     [SerializeField] private GameObject _grabTarget;
     private Moveable _heldObj;
-    private bool _lockRot = false;
+	private Rigidbody _heldRB;
+	private bool _lockRot = false;
     private CharacterControllerX cc;
     // Start is called before the first frame update
     void Start()
@@ -53,7 +54,12 @@ public class PlayerMovement : MonoBehaviour
 			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
 			cc.Rotate(a);
         }
-    }
+
+		if (_heldObj != null) {
+			//StartCoroutine(_heldObj.MoveToPos(_grabTarget.transform.position));
+			_heldObj.AndrewsMoveToPos(_grabTarget.transform.position);
+		}
+	}
 
     void Jump()
     {
@@ -68,27 +74,29 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_heldObj == null)
         {
-            
-            if (Physics.SphereCast(transform.position + cc.center, cc.radius, transform.forward, out RaycastHit hit, 1f))
+            if (Physics.SphereCast(transform.position + cc.center, 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
                 Debug.Log("Here!");
                 if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>())
                 {
                     
                     hit.transform.parent = transform;
-                    hit.transform.GetComponent<Rigidbody>().isKinematic = true;
-                    _heldObj = hit.transform.GetComponent<Moveable>();
-                    Vector3 position = _grabTarget.transform.localPosition;
-                    if (!_heldObj.Heavy)
-                    StartCoroutine(_heldObj.MoveToPos(position));
+					_heldObj = hit.transform.GetComponent<Moveable>();
+					_heldRB = _heldObj.GetComponent<Rigidbody>();
+					//hit.transform.GetComponent<Rigidbody>().isKinematic = true;
+					//_heldRB.constraints = RigidbodyConstraints.FreezeRotation;
+					Vector3 position = _grabTarget.transform.localPosition;
+                    //if (!_heldObj.Heavy)
+					//	StartCoroutine(_heldObj.MoveToPos(Vector3.zero));
                 }
             }
         }
         else
         {
             _heldObj.transform.parent = null;
-            _heldObj.GetComponent<Rigidbody>().isKinematic = false;
-            _heldObj = null;
+			//_heldObj.GetComponent<Rigidbody>().isKinematic = false;
+			//_heldRB.constraints = RigidbodyConstraints.FreezeRotation;
+			_heldObj = null;
         }
     }
 
