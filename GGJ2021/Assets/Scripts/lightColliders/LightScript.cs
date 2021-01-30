@@ -13,18 +13,6 @@ public class LightScript : MonoBehaviour, IInteractable
 		collisionScript = GetComponentInChildren<LightCollisionScript>();
 	}
 
-	void Update()
-	{
-		if (on)
-		{
-			turnOff();
-		}
-		else
-		{
-			turnOn();
-		}
-	}
-
 	public void Interact(PlayerMovement PlayerRef)
 	{
 		if (on) {

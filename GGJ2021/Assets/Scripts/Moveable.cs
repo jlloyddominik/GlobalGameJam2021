@@ -8,6 +8,7 @@ public class Moveable : MonoBehaviour, IInteractable
 	public bool visible = true;
 
 	public bool hideInDarkness = false;
+	public bool rotatable = false;
 	private ColliderScript colliderScript;
 
 	Rigidbody rb;
@@ -43,6 +44,14 @@ public class Moveable : MonoBehaviour, IInteractable
 		rb.MovePosition(_destination);
 		rb.velocity = Vector3.zero;
 	}
+
+	public void rotate(Quaternion rotation)
+	{
+		if (rotatable) {
+			rb.MoveRotation(rotation);
+		}
+	}
+
 	public void Interact(PlayerMovement PlayerRef)
 	{
 		if (CompareTag("grabbable") && visible)
