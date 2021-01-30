@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f64cd29586132e42b5e8bbb7066736c
+guid: c2562f4d5bca2424daaad77016b29696
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -7,17 +7,26 @@ ModelImporter:
       74: 6517714258327031822
     second: Idle.001
   - first:
+      74: 5449073193131188545
+    second: Armature|CubeAction
+  - first:
       74: -8945691123924629249
     second: Armature|Idle
   - first:
-      74: -2018899901426034266
-    second: Armature|jumpStart
+      74: -7826956303084868476
+    second: Armature|idleCarry
   - first:
-      74: 1303299601406483602
-    second: Armature|run
+      74: 7784595222701454703
+    second: Armature|jumpCarryDrop
   - first:
-      74: -4799524434163024911
-    second: Armature|walk
+      74: -2579067745794719135
+    second: Armature|jumpCarryEnd
+  - first:
+      74: -4000099554543047326
+    second: Armature|jumpCarryMid
+  - first:
+      74: -4539549000414478302
+    second: Armature|jumpCarryStart
   - first:
       74: -2279473684214877460
     second: Armature|jumpEnd
@@ -25,9 +34,29 @@ ModelImporter:
       74: 5792747406112825698
     second: Armature|jumpMid
   - first:
+      74: -2018899901426034266
+    second: Armature|jumpStart
+  - first:
+      74: 3706073277428837047
+    second: Armature|pickUp
+  - first:
+      74: -7658781401149789175
+    second: Armature|putDown
+  - first:
+      74: 1303299601406483602
+    second: Armature|run
+  - first:
+      74: -4799524434163024911
+    second: Armature|walk
+  - first:
       74: 6566261972556028450
     second: Armature|walkCarry
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 67edf52e0e0614918b665ef16f702ba0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -47,7 +76,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -67,8 +96,37 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|CubeAction
+      takeName: Armature|CubeAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -97,7 +155,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -114,11 +172,69 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|jumpEnd
-      takeName: Armature|jumpEnd
+      name: Armature|idleCarry
+      takeName: Armature|idleCarry
       internalID: 0
       firstFrame: 0
-      lastFrame: 3.6
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|jumpCarryDrop
+      takeName: Armature|jumpCarryDrop
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|jumpCarryEnd
+      takeName: Armature|jumpCarryEnd
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 4.28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -138,8 +254,111 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5682594
+      - time: 0.21777004
+        functionName: LandSFX
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|jumpCarryMid
+      takeName: Armature|jumpCarryMid
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|jumpCarryStart
+      takeName: Armature|jumpCarryStart
+      internalID: 0
+      firstFrame: 1.45
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.0811745
         functionName: JumpSFX
+        data: 
+        objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|jumpEnd
+      takeName: Armature|jumpEnd
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 3.02
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.34320557
+        functionName: LandSFX
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
           type: 3}
@@ -183,7 +402,7 @@ ModelImporter:
       name: Armature|jumpStart
       takeName: Armature|jumpStart
       internalID: 0
-      firstFrame: 6.1
+      firstFrame: 6
       lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
@@ -204,7 +423,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
+      - time: 0.008759124
         functionName: JumpSFX
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -212,6 +431,64 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|pickUp
+      takeName: Armature|pickUp
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|putDown
+      takeName: Armature|putDown
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -241,7 +518,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5418089
+      - time: 0.06097561
         functionName: FootSteps
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -249,7 +526,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.014505119
+      - time: 0.5452962
         functionName: FootSteps
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -286,7 +563,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.4839565
+      - time: 0.11041736
         functionName: FootSteps
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -294,7 +571,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.024107143
+      - time: 0.5749129
         functionName: FootSteps
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -331,7 +608,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5085324
+      - time: 0.10627177
         functionName: FootSteps
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -339,7 +616,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.087030716
+      - time: 0.5679442
         functionName: FootSteps
         data: 
         objectReferenceParameter: {fileID: 8768132223177183945, guid: 415c3cd7c957473428ae38b2590c144a,
@@ -393,167 +670,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: Runner2_2(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Empty
-      parentName: Runner2_2(Clone)
-      position: {x: -0.56563747, y: 0, z: -5}
-      rotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Empty.001
-      parentName: Runner2_2(Clone)
-      position: {x: 5, y: 0, z: 1.390081}
-      rotation: {x: 0.000000015454313, y: -0.7071067, z: 0.000000015454312, w: 0.7071068}
-      scale: {x: 100, y: 100, z: 100}
-    - name: guy
-      parentName: Runner2_2(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 20, y: 20, z: 20}
-    - name: Empty.002
-      parentName: Runner2_2(Clone)
-      position: {x: -5, y: 0, z: 1.390081}
-      rotation: {x: 0.000000015454313, y: -0.7071067, z: 0.000000015454312, w: 0.7071068}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Armature
-      parentName: Runner2_2(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 20, y: 20, z: 20}
-    - name: spine1
-      parentName: Armature
-      position: {x: -0, y: 0, z: 0.025342833}
-      rotation: {x: 0.7071068, y: -0.0000000842937, z: -0.0000000842937, w: 0.7071068}
-      scale: {x: 1, y: 0.9999998, z: 0.9999998}
-    - name: spine2
-      parentName: spine1
-      position: {x: -0, y: 0.0046037603, z: 0}
-      rotation: {x: -0, y: 7.1054274e-15, z: -3.5527137e-15, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: neck
-      parentName: spine2
-      position: {x: 1.5803297e-17, y: 0.008896466, z: 7.4505804e-11}
-      rotation: {x: 0.10658464, y: 2.5288135e-14, z: -0.000000025411754, w: 0.9943037}
-      scale: {x: 1, y: 0.9999997, z: 0.9999998}
-    - name: head
-      parentName: neck
-      position: {x: -8.448429e-17, y: 0.0028620663, z: -2.9802322e-10}
-      rotation: {x: -0.08365784, y: -7.3931224e-14, z: 0.000000019945592, w: 0.9964946}
-      scale: {x: 1, y: 1.0000002, z: 1.0000002}
-    - name: shoulder.L
-      parentName: spine2
-      position: {x: -0.00200536, y: 0.007656833, z: 5.153681e-10}
-      rotation: {x: -0.0028162894, y: -0.003734493, z: 0.79833984, w: 0.602189}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
-    - name: bicep.L
-      parentName: shoulder.L
-      position: {x: 0.000000001725275, y: 0.00298634, z: -3.72529e-10}
-      rotation: {x: 0.0026446232, y: -0.0028293892, z: -0.12501253, w: 0.9921476}
-      scale: {x: 1.0000004, y: 1.000001, z: 0.99999976}
-    - name: forearm.L
-      parentName: bicep.L
-      position: {x: 0.0000000012223609, y: 0.0064244894, z: 8.1956386e-10}
-      rotation: {x: 0.035817936, y: 0.0026530921, z: 0.0025120897, w: 0.99935174}
-      scale: {x: 1.000001, y: 1.0000007, z: 1.0000002}
-    - name: hand.L
-      parentName: forearm.L
-      position: {x: 3.8649886e-10, y: 0.0069808085, z: 1.3038516e-10}
-      rotation: {x: -0.05270453, y: 0.00018212665, z: -0.000027501806, w: 0.9986102}
-      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000002}
-    - name: shoulder.R
-      parentName: spine2
-      position: {x: 0.00200536, y: 0.007656833, z: -4.4086226e-10}
-      rotation: {x: -0.0028164682, y: 0.0037346247, z: -0.79833984, w: 0.602189}
-      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999998}
-    - name: bicep.R
-      parentName: shoulder.R
-      position: {x: -0.0000000020232982, y: 0.00298634, z: -4.0978193e-10}
-      rotation: {x: -0.0026446027, y: -0.002829345, z: -0.12501264, w: -0.9921477}
-      scale: {x: 1.0000005, y: 1.0000008, z: 0.9999995}
-    - name: forearm.R
-      parentName: bicep.R
-      position: {x: -2.3050233e-10, y: 0.006424487, z: 3.352761e-10}
-      rotation: {x: 0.03581786, y: -0.0026530589, z: -0.002512216, w: 0.9993517}
-      scale: {x: 1, y: 0.99999946, z: 1.0000001}
-    - name: hand.R
-      parentName: forearm.R
-      position: {x: -8.422648e-10, y: 0.006980807, z: 3.7252902e-11}
-      rotation: {x: -0.052704643, y: -0.00018213877, z: 0.000027474262, w: 0.99861014}
-      scale: {x: 0.9999998, y: 1, z: 0.99999964}
-    - name: handIK.L
-      parentName: Armature
-      position: {x: -0.0066735614, y: 0.0007166422, z: 0.023597026}
-      rotation: {x: 0.07677545, y: -0.69634223, z: 0.7029264, w: 0.12291301}
-      scale: {x: 1.0000001, y: 0.99999994, z: 0.9999998}
-    - name: leg.L
-      parentName: Armature
-      position: {x: -0.002278818, y: -1.4079223e-10, z: 0.024835836}
-      rotation: {x: -0.47552615, y: -0.47064978, z: 0.5282315, w: 0.52281475}
-      scale: {x: 0.9999998, y: 1, z: 1}
-    - name: shin.L
-      parentName: leg.L
-      position: {x: -7.4505804e-11, y: 0.011054395, z: 4.4703483e-10}
-      rotation: {x: 0.016325802, y: 0.000854373, z: 0.07570079, w: -0.9969966}
-      scale: {x: 0.99999964, y: 1, z: 0.9999997}
-    - name: foot.L
-      parentName: shin.L
-      position: {x: -1.9790604e-10, y: 0.011492587, z: 3.7252902e-11}
-      rotation: {x: -0.03438558, y: 0.0051850467, z: -0.537919, w: -0.842279}
-      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
-    - name: ankleIK.L
-      parentName: Armature
-      position: {x: -0.0047867736, y: -0.003559858, z: 0.0029653593}
-      rotation: {x: -0.6478985, y: -0.22638226, z: 0.69612074, w: 0.21070012}
-      scale: {x: 1.0000001, y: 1.0000002, z: 1}
-    - name: kneeIK.L
-      parentName: Armature
-      position: {x: -0.0028476347, y: -0.010099723, z: 0.014313874}
-      rotation: {x: -0.6690561, y: -0.000000029802326, z: 0.7432119, w: 0.000000029802326}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: elbowIK.L
-      parentName: Armature
-      position: {x: -0.007269432, y: 0.0080362195, z: 0.031505827}
-      rotation: {x: -0, y: -0.9751687, z: -0, w: 0.22146343}
-      scale: {x: 1, y: 0.9999999, z: 0.9999998}
-    - name: leg.R
-      parentName: Armature
-      position: {x: 0.002278818, y: -1.4111835e-10, z: 0.02448254}
-      rotation: {x: 0.47552612, y: -0.47064978, z: 0.5282315, w: -0.52281475}
-      scale: {x: 0.9999998, y: 0.9999998, z: 1}
-    - name: shin.R
-      parentName: leg.R
-      position: {x: 2.9802322e-10, y: 0.011054394, z: -2.933666e-10}
-      rotation: {x: -0.016325802, y: 0.0008543432, z: 0.075700775, w: 0.9969966}
-      scale: {x: 0.9999995, y: 0.99999964, z: 0.9999994}
-    - name: foot.R
-      parentName: shin.R
-      position: {x: -9.546056e-10, y: 0.011492587, z: -1.11758706e-10}
-      rotation: {x: 0.034385502, y: 0.005184913, z: -0.537919, w: 0.8422791}
-      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
-    - name: ankleIK.R
-      parentName: Armature
-      position: {x: 0.004256833, y: 0.0056846696, z: 0.0029653597}
-      rotation: {x: 0.6478985, y: -0.22638226, z: 0.69612074, w: -0.21070012}
-      scale: {x: 1, y: 0.9999998, z: 0.99999994}
-    - name: kneeIK.R
-      parentName: Armature
-      position: {x: 0.00272987, y: -0.010099723, z: 0.014313874}
-      rotation: {x: 0.6690561, y: -0.000000029802326, z: 0.7432119, w: -0.000000029802326}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: handIK.R
-      parentName: Armature
-      position: {x: 0.006448388, y: 0.00016637308, z: 0.023498505}
-      rotation: {x: -0.07677545, y: -0.69634223, z: 0.7029264, w: -0.12291301}
-      scale: {x: 1.0000001, y: 1.0000002, z: 0.9999997}
-    - name: elbowIK.R
-      parentName: Armature
-      position: {x: 0.007269432, y: 0.0080362195, z: 0.031505827}
-      rotation: {x: -0, y: -0.9751687, z: -0, w: -0.22146343}
-      scale: {x: 1, y: 0.9999999, z: 0.9999998}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -564,7 +681,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
