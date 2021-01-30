@@ -12,7 +12,7 @@ public class SwingingLight : MonoBehaviour, IInteractable
     [SerializeField]private float _speed = 1f;
     int _phase = 0;
 
-    [SerializeField] private Light Lightbulb;
+    [SerializeField] private GameObject Lightbulb;
     private void FixedUpdate()
     {
         _timer += Time.fixedDeltaTime;
@@ -41,10 +41,10 @@ public class SwingingLight : MonoBehaviour, IInteractable
 
     public void Switch()
     {
-        Lightbulb.gameObject.SetActive(!Lightbulb.gameObject.activeSelf);
+        Lightbulb.SetActive(!Lightbulb.activeSelf);
     }
 
-    public void Interact()
+    public void Interact(PlayerMovement PlayerRef)
     {
         Switch();
     }
