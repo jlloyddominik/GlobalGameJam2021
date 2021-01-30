@@ -38,7 +38,6 @@ public class LightScript : MonoBehaviour, IInteractable
 				turnOff();
 			}
 		}
-		print(onChance);
 	}
 
 	public void Interact(PlayerMovement PlayerRef)
