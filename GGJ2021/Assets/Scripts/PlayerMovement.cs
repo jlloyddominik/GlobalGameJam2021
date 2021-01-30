@@ -65,13 +65,16 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	private float coyoteTime = 0.05f;
     void Jump()
     {
-        if (cc.isGrounded || (_heldObj != null && !_heldObj.Heavy))
+		print(cc.isGrounded);
+        if (cc.isGrounded || cc.timeSinceLastGround <= coyoteTime)// || (_heldObj != null && !_heldObj.Heavy))
         {
             _playerVelocity.y += Mathf.Sqrt(-_jumpHeight * _gravityValue);
+			cc.timeSinceLastGround = 2* coyoteTime;
 
-        }
+		}
     }
 
     void Grab()
@@ -81,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.SphereCast(transform.position + cc.center, 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
                 Debug.Log("Here!");
-                if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>())
+                if (hit.transform.CompareTag("grabbable") && hit.transform.GetComponent<Moveable>() && hit.transform.GetComponent<Moveable>().visible)
                 {
 					_heldObj = hit.transform.GetComponent<Moveable>();
 					_heldObj.grab();

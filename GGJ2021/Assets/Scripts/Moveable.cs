@@ -5,6 +5,10 @@ using UnityEngine;
 public class Moveable : MonoBehaviour
 {
     public bool Heavy = false;
+	public bool visible = true;
+
+	public bool hideInDarkness = false;
+	private ColliderScript colliderScript;
 
 	Rigidbody rb;
 	float mass;
@@ -12,6 +16,17 @@ public class Moveable : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody>();
 		mass = rb.mass;
+
+		if (hideInDarkness) {
+			colliderScript = GetComponent<ColliderScript>();
+		}
+	}
+
+	private void Update()
+	{
+		if (hideInDarkness) {
+			visible = colliderScript.revealed;
+		}
 	}
 
 	public IEnumerator MoveToPos(Vector3 _destination)
