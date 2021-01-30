@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     private Moveable _heldObj;
     [SerializeField] private List<AudioClip> FootstepsWalk = new List<AudioClip>();
     [SerializeField] private List<AudioClip> FootstepsRun = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> JumpSFXList = new List<AudioClip>();
+    [SerializeField] private List<AudioClip> LandSFXList = new List<AudioClip>();
+    
     private bool _lockRot => LockRotation.ReadValue<float>() >0;
     private bool _freezeMovements => (this.animator.GetCurrentAnimatorStateInfo(0).IsName("PickUp"));
     public Moveable HeldObj { get => _heldObj; set => _heldObj = value; }
@@ -97,18 +100,7 @@ public class PlayerMovement : MonoBehaviour
 			_heldObj.rotate(cc.model.rotation);
 		}
 	}
-    public void FootSteps()
-    {
-        //Footsteps
-        Debug.Log("PlaySoundR");
-        int _randomSound = Random.Range(0, FootstepsWalk.Count - 1);
-        _audioPlayer.PlayOneShot(FootstepsWalk[_randomSound]);
-    }
 
-    public void JumpSFX()
-    {
-
-    }
 
     void Animation(Vector3 _playerInput)
     {
@@ -152,5 +144,22 @@ public class PlayerMovement : MonoBehaviour
     void FlashLightToggle()
     {
         _flashlight.gameObject.SetActive(!_flashlight.gameObject.activeSelf);
+    }
+
+    public void FootSteps()
+    {
+        int _randomSound = Random.Range(0, FootstepsWalk.Count - 1);
+        _audioPlayer.PlayOneShot(FootstepsWalk[_randomSound]);
+    }
+
+    public void JumpSFX()
+    {
+        int _randomSound = Random.Range(0, JumpSFXList.Count - 1);
+        _audioPlayer.PlayOneShot(JumpSFXList[_randomSound]);
+    }
+    public void LandSFX()
+    {
+        int _randomSound = Random.Range(0, LandSFXList.Count - 1);
+        _audioPlayer.PlayOneShot(LandSFXList[_randomSound]);
     }
 }
