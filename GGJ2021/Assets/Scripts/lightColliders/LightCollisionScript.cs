@@ -9,6 +9,8 @@ public abstract class LightCollisionScript : MonoBehaviour
 	SphereCollider ownCollider;
 	protected Light pLight;
 
+	public bool shining = true;
+
 	void Start()
 	{
 		ownCollider = GetComponent<SphereCollider>();
