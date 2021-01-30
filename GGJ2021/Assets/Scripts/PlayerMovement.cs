@@ -50,13 +50,13 @@ public class PlayerMovement : MonoBehaviour
         _movementDir.y = _playerVelocity.y;
         cc.Move(_movementDir * Time.deltaTime);
 
-        //if (_playerInput != Vector3.zero && (!_lockRot))
-        //{
-			//Vector3 _rotationDir = _movementDir;
-			//_rotationDir[1] = 0;
-			//Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
-			//cc.Rotate(a);
-        //}
+        if (_playerInput != Vector3.zero && (!_lockRot))
+        {
+			Vector3 _rotationDir = _movementDir;
+			_rotationDir[1] = 0;
+			Quaternion a = Quaternion.LookRotation(_rotationDir, Vector3.up);
+			cc.Rotate(a);
+        }
     }
 
     void Jump()
