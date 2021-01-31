@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6889358591944742791}
   - component: {fileID: 7967563599104789034}
   - component: {fileID: 8574023970191801724}
+  - component: {fileID: 7274311201754715526}
   m_Layer: 11
   m_Name: Box
   m_TagString: grabbable
@@ -141,6 +142,7 @@ MonoBehaviour:
   groundmerged: 0
   standingOnDarkness: 0
   revealed: 0
+  alwaysRevealedOverwrite: 0
 --- !u!114 &7967563599104789034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +171,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b968cec75a026940b714b267eb11ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7274311201754715526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889358591944742813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.25, z: 1.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6889358592390833157
 GameObject:
   m_ObjectHideFlags: 0
