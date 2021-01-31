@@ -1155,7 +1155,7 @@ PrefabInstance:
     - target: {fileID: 3496071564260596202, guid: 511bd8e5dab15eb46bc69942e1e1ef8f,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 90
+      value: 75.960785
       objectReference: {fileID: 0}
     - target: {fileID: 4889091644152255469, guid: 511bd8e5dab15eb46bc69942e1e1ef8f,
         type: 3}
@@ -1626,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 3238306196948614133, guid: fcc38509ac00c3549a1fb1e84567c94c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3238306196948614133, guid: fcc38509ac00c3549a1fb1e84567c94c,
         type: 3}
@@ -1641,7 +1641,7 @@ PrefabInstance:
     - target: {fileID: 3238306196948614133, guid: fcc38509ac00c3549a1fb1e84567c94c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 3238306196948614133, guid: fcc38509ac00c3549a1fb1e84567c94c,
         type: 3}

@@ -9,9 +9,9 @@ public class EndGame : MonoBehaviour
     private void Start()
     {
         if (MusicClass.Score < 1)
-        ScoreCounter.text = MusicClass.Score.ToString() + " belonging!";
+        ScoreCounter.text = MusicClass.Score.ToString() + "/8 rings!";
         else
-            ScoreCounter.text = MusicClass.Score.ToString() + " belongings!";
+            ScoreCounter.text = MusicClass.Score.ToString() + "/8 rings!";
     }
     public void Quit()
     {
