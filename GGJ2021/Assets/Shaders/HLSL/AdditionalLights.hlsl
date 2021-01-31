@@ -9,7 +9,7 @@ void RevealSingle_float(float3 Position, int index, out float1 Value, out float3
 #ifndef SHADERGRAPH_PREVIEW
     Light light = GetAdditionalLight(index, Position);
     value = (light.distanceAttenuation * light.shadowAttenuation);
-    inLight = light.distanceAttenuation * light.shadowAttenuation;
+    inLight = light.distanceAttenuation;
     colour = light.color * (light.distanceAttenuation * light.shadowAttenuation);
 #endif
     Value = value;
@@ -29,7 +29,7 @@ void RevealLight_float(float3 Position, out float1 Value, out float3 Colour, out
     {
         Light light = GetAdditionalLight(i, Position);
         value += (light.distanceAttenuation * light.shadowAttenuation);
-        inLight += light.distanceAttenuation * light.shadowAttenuation;
+        inLight += light.distanceAttenuation;
         colour += light.color * (light.distanceAttenuation * light.shadowAttenuation);
     }
 #endif
