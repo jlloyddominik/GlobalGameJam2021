@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mat_Triplanar_Test
-  m_Shader: {fileID: -6465566751694194690, guid: 3b48a44a8b226432abff63fb1fe161c7,
+  m_Shader: {fileID: -6465566751694194690, guid: defbfeea2463b47e98930fdaced51efb,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -38,11 +38,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8DDFDE5D:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ede3731c1a64c439f803546aac3a5390, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_BE5B87:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: f4986bf0c72b545049aacc9463112b4f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -74,7 +74,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_759D2D52: 0.1
+    - Vector1_31B62F9: 0.1
+    - Vector1_3F4ED9CD: 1
+    - Vector1_41614DDB: 0.19
+    - Vector1_759D2D52: 0.5
+    - Vector1_A4587A46: 0.1
     - Vector1_B96C5FA0: 0.34
     - Vector1_B9F6CF29: 1.77
     - _AlphaClip: 0
@@ -100,7 +104,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_FC264E77: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_4BB93551: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - Vector3_4BB93551: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
