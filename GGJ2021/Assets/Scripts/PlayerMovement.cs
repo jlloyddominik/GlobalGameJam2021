@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         if (cc.isGrounded || cc.timeSinceLastGround <= coyoteTime)// || (_heldObj != null && !_heldObj.Heavy))
         {
             animator.SetTrigger("Jumped");
-            _playerVelocity.y += Mathf.Sqrt(-_jumpHeight * _gravityValue);
+            _playerVelocity.y = Mathf.Sqrt(-_jumpHeight * _gravityValue);
 			cc.timeSinceLastGround = 2* coyoteTime;
 
 		}

@@ -374,23 +374,7 @@ MonoBehaviour:
     m_Id: 8c58813b-b945-4bc3-996a-d171f980fc4e
     m_Processors: 
     m_Interactions: Hold
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 060e52d0-9833-4ade-8702-9f51f7d8fcb4
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Lock Rotation
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 20c5564c-db0c-42d4-a7e2-4ae03ce17eb6
-      m_Path: <Gamepad>/rightShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Lock Rotation
-      m_Flags: 0
+    m_SingletonActionBindings: []
   JumpInput:
     m_Name: Jump Input
     m_Type: 0
@@ -422,23 +406,7 @@ MonoBehaviour:
     m_Id: d68d7e08-540e-4f35-9ca0-2d1b0954e245
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 24771dca-b141-4b5e-aa2f-c1cbc87f1180
-      m_Path: <Gamepad>/buttonWest
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Light Input
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 0f5bca8c-577d-40f7-95bb-a10f2762e773
-      m_Path: <Keyboard>/f
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Light Input
-      m_Flags: 0
+    m_SingletonActionBindings: []
   GrabInput:
     m_Name: Grab Input
     m_Type: 0
