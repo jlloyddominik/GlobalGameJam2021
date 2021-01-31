@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private List<AudioClip> LandSFXList = new List<AudioClip>();
     
     private bool _lockRot => LockRotation.ReadValue<float>() >0;
-    private bool _freezeMovements => (this.animator.GetCurrentAnimatorStateInfo(0).IsName("PickUp"));
+    private bool _freezeMovements => this.animator.GetCurrentAnimatorStateInfo(0).IsName("PickUp");
     public Moveable HeldObj { get => _heldObj; set => _heldObj = value; }
 
     private Rigidbody _heldRB;
@@ -50,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
         LightInput.Enable();
         LightInput.performed += _ => FlashLightToggle();
 
-        LockRotation.Enable();
         //LockRotation.started += _ => _lockRot = true;
         //LockRotation.performed += _ => _lockRot = false;
         //LockRotation.canceled += _ => _lockRot = false;
@@ -117,7 +116,6 @@ public class PlayerMovement : MonoBehaviour
 	private float coyoteTime = 0.1f;
     void Jump()
     {
-		print(cc.isGrounded);
         if (cc.isGrounded || cc.timeSinceLastGround <= coyoteTime)// || (_heldObj != null && !_heldObj.Heavy))
         {
             animator.SetTrigger("Jumped");
@@ -131,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_heldObj == null)
         {
-            if (Physics.SphereCast(transform.position , 0.5f, _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
+            if (Physics.Raycast(transform.position+cc.center , _grabTarget.transform.forward, out RaycastHit hit, 1.5f))
             {
                 var interactable = hit.transform.GetComponent<IInteractable>();
                 if (interactable == null) return;
