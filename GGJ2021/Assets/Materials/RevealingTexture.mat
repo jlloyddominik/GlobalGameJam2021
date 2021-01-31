@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RevealingTexture
-  m_Shader: {fileID: -6465566751694194690, guid: 5a686df6cd4ce4e8ca19201c74d6f9ac,
+  m_Shader: {fileID: -6465566751694194690, guid: a30d8b9aee4d54efea6e7719b8f90281,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -71,9 +71,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1C03A6A9: 0
-    - Vector1_759D2D52: 0
-    - Vector1_B96C5FA0: 0
-    - Vector1_B9F6CF29: 0
+    - Vector1_759D2D52: 0.1
+    - Vector1_B96C5FA0: 0.34
+    - Vector1_B9F6CF29: 1.77
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -96,8 +96,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_318EA7BD: {r: 0, g: 0, b: 0, a: 0}
-    - Color_47CB6A72: {r: 0, g: 0, b: 0, a: 0}
+    - Color_318EA7BD: {r: 0.99001205, g: 1, b: 0.7311321, a: 0}
+    - Color_47CB6A72: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0}
     - Color_4B476622: {r: 0, g: 0, b: 0, a: 0}
     - Color_FC264E77: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
