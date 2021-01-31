@@ -6,18 +6,31 @@ public class ContactTracker : MonoBehaviour
 {
     public int numberOfContacts = 0;
 
-    // Update is called once per frame
-    void Update()
+	private List<int> contacts;
+
+	private void Start()
+	{
+		contacts = new List<int>();
+	}
+
+	void Update()
     {
 		
 	}
 
 	void OnTriggerEnter(Collider other) {
-		numberOfContacts = numberOfContacts + 1;
+		if (!contacts.Contains(other.GetInstanceID())) {
+			contacts.Add(other.GetInstanceID());
+			numberOfContacts = numberOfContacts + 1;
+		}
 	}
 
 	void OnTriggerExit(Collider other)
 	{
-		numberOfContacts = numberOfContacts - 1;
+		if (contacts.Contains(other.GetInstanceID()))
+		{
+			contacts.Remove(other.GetInstanceID());
+			numberOfContacts = numberOfContacts - 1;
+		}
 	}
 }
