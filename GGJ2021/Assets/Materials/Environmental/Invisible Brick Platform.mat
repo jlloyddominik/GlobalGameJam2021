@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Concrete Wall
-  m_Shader: {fileID: -6465566751694194690, guid: 2ac814a46736547558bf42c6b119045b,
+  m_Name: Invisible Brick Platform
+  m_Shader: {fileID: -6465566751694194690, guid: cd24bd32bde5e4eada0a62e64ad2bd19,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -21,19 +21,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_16F18601:
-        m_Texture: {fileID: 2800000, guid: d183ed19b4c17443da24e0bf71806bf4, type: 3}
+        m_Texture: {fileID: 2800000, guid: f4986bf0c72b545049aacc9463112b4f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5835D213:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4205992fc95f2417d9da9896ed830430, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8DDFDE5D:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4205992fc95f2417d9da9896ed830430, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_BE5B87:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d183ed19b4c17443da24e0bf71806bf4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -92,8 +92,9 @@ Material:
     m_Colors:
     - Color_318EA7BD: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
     - Color_47CB6A72: {r: 0, g: 0, b: 0, a: 0}
+    - Color_86771EC6: {r: 0.9779969, g: 1, b: 0.5424528, a: 0}
     - Color_FC264E77: {r: 0, g: 0, b: 0, a: 0}
-    - Vector3_4BB93551: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - Vector3_4BB93551: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
