@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 8300640995813009431}
   - component: {fileID: 8300640995813009448}
   - component: {fileID: 8300640995813009428}
-  - component: {fileID: 7333916024645502358}
   m_Layer: 11
   m_Name: Switch
   m_TagString: Untagged
@@ -154,6 +153,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableObjs:
   - {fileID: 0}
+  _lightSwitchSFX:
+  - {fileID: 8300000, guid: 3af2bc631a30464429f8cfdba9c16c06, type: 3}
+  - {fileID: 8300000, guid: 28e4f6823baa0964681e8c044f608195, type: 3}
+  - {fileID: 8300000, guid: 200a35885bc88a04db603d5481049266, type: 3}
+  - {fileID: 8300000, guid: c61cf69e33833094da48e6e32e04bf4f, type: 3}
   flickSwitch: {fileID: 5920234941609627898}
   light: {fileID: 169028976897459515}
 --- !u!1001 &6716823063789635920
