@@ -5,6 +5,7 @@ using UnityEngine;
 //https://answers.unity.com/questions/1260393/make-music-continue-playing-through-scenes.html
 public class MusicClass : MonoBehaviour
 {
+    public static int Score;
     private AudioSource _audioSource;
     private void Awake()
     {
