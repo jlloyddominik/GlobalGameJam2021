@@ -1026,7 +1026,7 @@ PrefabInstance:
     - target: {fileID: 8751234880003622157, guid: e5d44949e2b827147a3092a7e71416fd,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 40
+      value: 32.980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d44949e2b827147a3092a7e71416fd, type: 3}
@@ -1927,7 +1927,7 @@ PrefabInstance:
     - target: {fileID: 8751234880003622157, guid: e5d44949e2b827147a3092a7e71416fd,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 40
+      value: 32.980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d44949e2b827147a3092a7e71416fd, type: 3}
@@ -2588,7 +2588,7 @@ PrefabInstance:
     - target: {fileID: 8751234880003622157, guid: e5d44949e2b827147a3092a7e71416fd,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 40
+      value: 32.980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d44949e2b827147a3092a7e71416fd, type: 3}
@@ -2920,7 +2920,7 @@ PrefabInstance:
     - target: {fileID: 8751234880003622157, guid: e5d44949e2b827147a3092a7e71416fd,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 40
+      value: 32.980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d44949e2b827147a3092a7e71416fd, type: 3}

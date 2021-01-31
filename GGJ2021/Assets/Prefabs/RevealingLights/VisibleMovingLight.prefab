@@ -451,6 +451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light
       objectReference: {fileID: 0}
+    - target: {fileID: 3226524850520029151, guid: 4eee7da53e1ef584092b10c16cd8b98b,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 55.960785
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eee7da53e1ef584092b10c16cd8b98b, type: 3}
 --- !u!4 &3496071564260596201 stripped
