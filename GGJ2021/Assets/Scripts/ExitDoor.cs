@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 public class ExitDoor : MonoBehaviour
 {
 	Rigidbody rb;
+	AudioSource _audio;
+	[SerializeField]AudioClip _doorOpen;
 
 	public InterfaceManager mainInterface;
 	// Start is called before the first frame update
 	void Start()
     {
         rb = GetComponent<Rigidbody>();
+		_audio = GetComponent<AudioSource>();
     }
 
 	private void Update()
@@ -29,6 +32,7 @@ public class ExitDoor : MonoBehaviour
 	private void OnCollisionEnter(Collision collision)
 	{
 		mainInterface.fadeOut = true;
+		_audio.PlayOneShot(_doorOpen);
 		ending = true;
 	}
 }
