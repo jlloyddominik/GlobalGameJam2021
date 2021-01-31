@@ -26,14 +26,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private List<AudioClip> FootstepsRun = new List<AudioClip>();
     [SerializeField] private List<AudioClip> JumpSFXList = new List<AudioClip>();
     [SerializeField] private List<AudioClip> LandSFXList = new List<AudioClip>();
-    
+    [SerializeField] private AudioClip PickUpSound, PutDownSound;
+
     private bool _lockRot => LockRotation.ReadValue<float>() >0;
     private bool _freezeMovements => this.animator.GetCurrentAnimatorStateInfo(0).IsName("PickUp");
     public Moveable HeldObj { get => _heldObj; set => _heldObj = value; }
+    
 
     private Rigidbody _heldRB;
     private CharacterControllerX cc;
     private AudioSource _audioPlayer;
+    public AudioSource AudioPlayer { get => _audioPlayer; set => _audioPlayer = value; }
     // Start is called before the first frame update
     void Start()
     {
@@ -164,5 +167,14 @@ public class PlayerMovement : MonoBehaviour
     {
         int _randomSound = Random.Range(0, LandSFXList.Count - 1);
         _audioPlayer.PlayOneShot(LandSFXList[_randomSound]);
+    }
+
+    public void PickUpSFX()
+    {
+        _audioPlayer.PlayOneShot(PickUpSound);
+    }
+    public void PutDownSFX()
+    {
+        _audioPlayer.PlayOneShot(PutDownSound);
     }
 }

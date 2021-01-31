@@ -459,6 +459,8 @@ MonoBehaviour:
   LandSFXList:
   - {fileID: 8300000, guid: e54fa21b9cba4ed41a7187c186361ba9, type: 3}
   - {fileID: 8300000, guid: b8dcddae768907e4182028dde4d7c8c7, type: 3}
+  PickUpSound: {fileID: 8300000, guid: 060ce4d2dd7579549b71e7996e9883fa, type: 3}
+  PutDownSound: {fileID: 8300000, guid: 111c99bea3380e04d9c5a8481b01b540, type: 3}
 --- !u!114 &6226899688669877666
 MonoBehaviour:
   m_ObjectHideFlags: 0

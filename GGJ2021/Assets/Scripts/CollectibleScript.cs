@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class CollectibleScript : MonoBehaviour
 {
+	[SerializeField] AudioClip CollectSound;
+	AudioSource _audioPlayer;
 	public ParticleSystem particles;
 	public InterfaceManager mainInterface;
 	private bool ending = false;
 	private float endTime = 0;
 	Rigidbody rb;
 
-	private void Start()
+	private void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
+		_audioPlayer = GetComponent<AudioSource>();
 		rb.angularVelocity = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
 	}
 
@@ -33,6 +36,8 @@ public class CollectibleScript : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
+		if (collision.gameObject.CompareTag("Player"))
+			collision.gameObject.GetComponent<PlayerMovement>().AudioPlayer.PlayOneShot(CollectSound);
 		//Hacky Implementation of endgame item
 		if (!CompareTag("EndGame"))
 		{
