@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/A Light Maze.unity
     guid: ccb5ccbbde72b3946a37e89d29d74751
+  - enabled: 1
+    path: Assets/Scenes/Levels/The Final Level.unity
+    guid: 2a085c0fb36f41f4e829a2ea7c5a7781
   m_configObjects: {}
