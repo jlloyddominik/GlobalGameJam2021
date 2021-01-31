@@ -4893,7 +4893,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4925,6 +4925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 5939783704818745531}
+  mainInterface: {fileID: 0}
 --- !u!1001 &2833923108119394631
 PrefabInstance:
   m_ObjectHideFlags: 0
