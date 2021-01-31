@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1989130410519871230
+--- !u!114 &-6310850232771075141
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mat_Worklight_light
+  m_Name: Mat_Hinge
   m_Shader: {fileID: -6465566751694194690, guid: 2ac814a46736547558bf42c6b119045b,
     type: 3}
   m_ShaderKeywords: 
@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_16F18601:
-        m_Texture: {fileID: 2800000, guid: c38e0f6e7a6ef4cae92fa7f89ceeb405, type: 3}
+        m_Texture: {fileID: 2800000, guid: cd1a3946d9e4c4abbaf03ae8e4266df8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
