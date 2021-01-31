@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Holding", _heldObj != null);
         
     }
-	private float coyoteTime = 0.05f;
+	private float coyoteTime = 0.1f;
     void Jump()
     {
 		print(cc.isGrounded);
