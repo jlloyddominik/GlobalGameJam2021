@@ -12,6 +12,7 @@ public class ColliderScript : MonoBehaviour
 	public bool groundmerged = false;
 	public bool standingOnDarkness = false;
 	public bool revealed = false;
+	public bool alwaysRevealedOverwrite = false;
 
 	// Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class ColliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		revealed = false;
+		revealed = alwaysRevealedOverwrite;
 		int nRevealed = 0;
 		standingOnDarkness = false;
 		foreach (LightCheckerScript checkerScript in lightCheckers) {

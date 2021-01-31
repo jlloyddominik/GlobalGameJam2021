@@ -5,6 +5,13 @@ using UnityEngine;
 public class CollectibleScript : MonoBehaviour
 {
 	public ParticleSystem particles;
+	Rigidbody rb;
+
+	private void Start()
+	{
+		rb = GetComponent<Rigidbody>();
+		rb.angularVelocity = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), Random.Range(-10, 10));
+	}
 
 	private void OnCollisionEnter(Collision collision)
 	{
