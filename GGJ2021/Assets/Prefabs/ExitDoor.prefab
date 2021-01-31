@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8ef3ab6fa14fd4487246768de85fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DoorOpen: {fileID: 8300000, guid: 7561f7deba11f3f41a54c4d08ffc6a4b, type: 3}
+  _doorOpen: {fileID: 8300000, guid: 7561f7deba11f3f41a54c4d08ffc6a4b, type: 3}
   mainInterface: {fileID: 0}
 --- !u!82 &1832027465894643406
 AudioSource:
