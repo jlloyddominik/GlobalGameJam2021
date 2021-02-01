@@ -5,7 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Levels/Beginning.unity
+    guid: 8809681049a8d0443b09261cb03140f0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Simple Jumping.unity
+    guid: 5f2ad88f75c84c04a80394cfd2859dbe
+  - enabled: 1
+    path: Assets/Scenes/Levels/Light Introduction.unity
+    guid: e77fa147fe334924d934d199729cbfeb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Find The Invisible Box.unity
+    guid: d704c0f12aea1764dacfa5bede34913c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Directional lights.unity
+    guid: 2f06492bdef8cb34dbcbfb2f14cf7802
+  - enabled: 1
+    path: Assets/Scenes/Levels/The Corridor of Swinging Lamps.unity
+    guid: 2ab65e6749d87514c88f2b59aaffefab
+  - enabled: 1
+    path: Assets/Scenes/Levels/A Light Maze.unity
+    guid: ccb5ccbbde72b3946a37e89d29d74751
+  - enabled: 1
+    path: Assets/Scenes/Levels/The Final Level.unity
+    guid: 2a085c0fb36f41f4e829a2ea7c5a7781
+  - enabled: 1
+    path: Assets/Scenes/Levels/EndGame.unity
+    guid: c268cb1cc04d0664bb54df22747415c7
   m_configObjects: {}
